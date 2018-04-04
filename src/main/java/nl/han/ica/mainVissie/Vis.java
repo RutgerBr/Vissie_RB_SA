@@ -9,18 +9,17 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 
 import java.util.List;
 
-public abstract class Vis extends AnimatedSpriteObject implements ICollidableWithGameObjects
+public abstract class Vis extends GameObject implements ICollidableWithGameObjects
 {
     protected Oceaan oceaan;
     protected GameEngine g;
-    protected Sprite s;
+    //protected Sprite s;
 
-    Vis(Oceaan o, Sprite s, int frames)
+    Vis(Oceaan o)
     {
-        super(s, frames);
-        oceaan = o;
+        this.oceaan = o;
         g = oceaan.g;
-        this.s = s;
+    //    this.s = s;
     }
 
     /**

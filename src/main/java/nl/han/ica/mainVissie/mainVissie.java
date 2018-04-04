@@ -30,7 +30,7 @@ public class mainVissie extends GameEngine {
     public void initializePersistence() {
 
     }
-
+ 
     public void verhoogScore() {
         // to-do (must)
     }
