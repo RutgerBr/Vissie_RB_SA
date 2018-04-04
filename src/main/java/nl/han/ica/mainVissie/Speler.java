@@ -9,16 +9,16 @@ import processing.core.PGraphics;
  */
 public class Speler extends Vis
 {
-    private int grootte = 50;
+    private int grootte = 25;
     private final Sound hapGeluid;
 
     Speler(Oceaan o)
     {
         super(o);
-        //  super(o, new Sprite("src/main/java/nl/han/ica/mainVissie/media/speler.png"), 4);
         hapGeluid = new Sound(o.g, "src/main/java/nl/han/ica/mainVissie/media/hap.mp3");
+        // super(o, new Sprite("src/main/java/nl/han/ica/mainVissie/media/speler.png"), 4);
         // Aangeven welke sprite er als het programma start moet worden weergegeven
-        //    setCurrentFrameIndex(1);
+        // setCurrentFrameIndex(1);
 
         // Hoe ver de speler beweegt in 1 "move"
         setFriction(0.05f);
@@ -35,6 +35,8 @@ public class Speler extends Vis
     public void maakGroter(int waarde)
     {
         grootte += waarde;
+        setHeight(grootte);
+        setWidth(grootte);
         //  super.s.resize(grootte, grootte);
         //  setFrameWidth(grootte / 4); // setter gemaakt in AnimatedSpriteObject uit GameEngine
     }

@@ -13,6 +13,7 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
 {
     protected Oceaan oceaan;
     protected GameEngine g;
+    private int marge = 5;
     //protected Sprite s;
 
     Vis(Oceaan o)
@@ -39,7 +40,7 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
                 {
                     ((Speler) this).speelHapGeluid();
                     g.deleteGameObject(go);
-                    ((Speler) this).maakGroter(15);
+                    ((Speler) this).maakGroter(((AI) go).getGrootte() / marge);
                     oceaan.verhoogScore();
                 } else if (this.getGrootte() < ((AI) go).getGrootte())
                 {

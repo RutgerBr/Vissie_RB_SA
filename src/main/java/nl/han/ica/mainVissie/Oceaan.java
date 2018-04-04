@@ -40,7 +40,7 @@ public class Oceaan
 
     public void verhoogScore()
     {
-        score.setTekst("Score: " + (speler.getGrootte() - 48) * 100);
+        score.setTekst("Score: " + (speler.getGrootte()) * 10);
     }
 
     private void maakMenuAan(){
@@ -82,12 +82,6 @@ public class Oceaan
     {
         visSpawner = new VisSpawner(g, 1, this);
     }
-
-//    public void printScore(int score);
-//    {
-//
-//    }
-
 
     public int getWorldWidth()
     {

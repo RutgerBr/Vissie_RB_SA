@@ -48,7 +48,7 @@ public class AI extends Vis
     @Override
     public void draw(PGraphics g)
     {
-        g.ellipseMode(g.CORNER); // Omdat cirkel anders vanuit midden wordt getekend en dat problemen geeft bij collisiondetectie
+        g.ellipseMode(g.CORNER);
         g.fill(255, 50, 50);
         g.ellipse(getX(), getY(), grootte, grootte);
     }
