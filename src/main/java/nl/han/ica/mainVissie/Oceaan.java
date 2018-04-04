@@ -24,7 +24,6 @@ public class Oceaan
 
         maakSpelerAan(g);
         printScore(worldWidth, 100);
-        maakAiSpawnerAan();
     }
 
     public void maakEindMenuAan(String tekst)

@@ -22,10 +22,9 @@ public class mainVissie extends GameEngine
         maakSoundAan();
         maakOceaanAan();
         oceaan.createViewWithViewport(this, 1000, 800, 1f);
-
+        oceaan.maakAiSpawnerAan();
         menu = new StartMenu(this, 0, 0, oceaan.getWorldWidth(), oceaan.getWorldHeight());
         menu.maakMenuAan(this, oceaan, "Begin spel: ");
-
     }
 
 
