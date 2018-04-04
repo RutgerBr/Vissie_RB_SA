@@ -24,7 +24,7 @@ public class mainVissie extends GameEngine
         oceaan.createViewWithViewport(this, 1000, 800, 1f);
 
         menu = new StartMenu(this, 0, 0, oceaan.getWorldWidth(), oceaan.getWorldHeight());
-        menu.maakMenuAan(this, oceaan, "Begin spel:");
+        menu.maakMenuAan(this, oceaan, "Begin spel: ");
 
     }
 
