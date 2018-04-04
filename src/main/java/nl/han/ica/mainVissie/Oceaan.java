@@ -27,13 +27,13 @@ public class Oceaan
         maakAiSpawnerAan();
     }
 
-    public void maakEindMenuAan()
+    public void maakEindMenuAan(String tekst)
     {
         if(!menuIsGemaakt)
         {
             g.deleteGameObject(speler);
             menu = new EindMenu(g, 0, 0, getWorldWidth(), getWorldHeight());
-            menu.maakMenuAan(g, this);
+            menu.maakMenuAan(g, this, tekst);
             menuIsGemaakt = true;
         }
     }
@@ -48,7 +48,7 @@ public class Oceaan
 
     public void verhoogScore()
     {
-        score = (speler.getGrootte()) * 10;
+        score = (speler.getGrootte() - 20) * 10;
         scoreTekst.setTekst("Score: " + score);
     }
 

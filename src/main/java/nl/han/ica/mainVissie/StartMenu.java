@@ -13,10 +13,10 @@ public class StartMenu extends Menu
 
 
     @Override
-    public void maakMenuAan(GameEngine g, Oceaan o)
+    public void maakMenuAan(GameEngine g, Oceaan o, String tekst)
     {
         this.setBackground(200, 200, 200);
-        tekstObject startOpnieuw = new tekstObject("Begin spel: ", 0, 0);
+        tekstObject startOpnieuw = new tekstObject(tekst, 0, 0);
         addGameObject(startOpnieuw);
         knop = new StartKnop(g, o, o.getWorldWidth() / 5, 1, 500, 100);
         addGameObject(knop);

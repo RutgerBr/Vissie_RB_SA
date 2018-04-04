@@ -11,5 +11,5 @@ public abstract class Menu extends Dashboard
         super(x, y, width, height);
         this.g = g;
     }
-    public abstract void maakMenuAan(GameEngine g, Oceaan o);
+    public abstract void maakMenuAan(GameEngine g, Oceaan o, String tekst);
 }

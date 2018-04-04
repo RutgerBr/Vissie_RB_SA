@@ -12,14 +12,14 @@ public class EindMenu extends Menu
     }
 
     @Override
-    public void maakMenuAan(GameEngine g, Oceaan o)
+    public void maakMenuAan(GameEngine g, Oceaan o, String tekst)
     {
-        this.setBackground(200, 200, 200);
+        this.setBackground(240, 240, 240);
         tekstObject eindScore = new tekstObject("Eindscore: " + o.getScore(), 0, 0);
-        tekstObject startOpnieuw = new tekstObject("Je bent opgegeten! opnieuw beginnen: ", 0, 100);
+        tekstObject startOpnieuw = new tekstObject(tekst + " opnieuw beginnen: ", 0, 100);
         addGameObject(eindScore);
         addGameObject(startOpnieuw);
-        knop = new StartKnop(g, o, o.getWorldWidth() / 5, 1, 500, 100);
+        knop = new StartKnop(g, o, o.getWorldWidth() / 5, 200, 500, 100);
         addGameObject(knop);
         g.addDashboard(this);
     }

@@ -15,7 +15,7 @@ public class StartKnop extends Knop
     @Override
     public void tekenKnop(PGraphics pg)
     {
-        pg.fill(50, 255, 50);
+        pg.fill(50, 150, 50);
         pg.rect(super.x, super.y, super.breedte, super.hoogte);
     }
 
@@ -25,8 +25,11 @@ public class StartKnop extends Knop
         g.deleteAllGameOBjects();
         g.deleteAllDashboards();
         o = new Oceaan(g);
+        o.createViewWithViewport(g, 1000, 800, 1f);
         o.maakSpelerAan(g);
         o.maakAiSpawnerAan();
+
+
     }
 
     @Override
@@ -39,35 +42,5 @@ public class StartKnop extends Knop
     public void draw(PGraphics g)
     {
         tekenKnop(g);
-    }
-
-    @Override
-    public void mouseReleased(int x, int y, int button)
-    {
-
-    }
-
-    @Override
-    public void mouseClicked(int x, int y, int button)
-    {
-
-    }
-
-    @Override
-    public void mouseMoved(int x, int y)
-    {
-
-    }
-
-    @Override
-    public void mouseDragged(int x, int y, int button)
-    {
-
-    }
-
-    @Override
-    public void mouseWheel(int direction)
-    {
-
     }
 }

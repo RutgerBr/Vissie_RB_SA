@@ -15,13 +15,11 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     protected GameEngine g;
     private int marge = 5;
     private boolean opgegeten = false;
-    //protected Sprite s;
 
     Vis(Oceaan o)
     {
         this.oceaan = o;
         g = oceaan.g;
-    //    this.s = s;
     }
 
     /**
@@ -47,10 +45,6 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
                     opgegeten = true;
                 }
                 oceaan.verhoogScore();
-                /*popSound.rewind();
-                popSound.play();
-                world.deleteGameObject(this);
-                world.increaseBubblesPopped();*/
             }
         }
     }
@@ -67,10 +61,5 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     public boolean isOpgegeten()
     {
         return opgegeten;
-    }
-
-    public void setOpgegeten(boolean opgegeten)
-    {
-        this.opgegeten = opgegeten;
     }
 }
