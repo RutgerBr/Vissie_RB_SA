@@ -9,7 +9,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 public class Oceaan
 {
     private tekstObject scoreTekst;
-    private int score = 0;
+    private int score;
     private Sound achtergrondGeluid;
     private VisSpawner visSpawner;
     private Vis speler;
