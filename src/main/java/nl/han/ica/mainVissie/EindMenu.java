@@ -21,6 +21,8 @@ public class EindMenu extends Menu
         addGameObject(startOpnieuw);
         g.addDashboard(this);
 
-        knop = new StartKnop(g, o, x, y, width, height);
+
+
+        knop = new StartKnop(g, o, 0, 0, width, height);
     }
 }

@@ -1,8 +1,9 @@
 package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
 
-public class StartKnop extends Knop
+public class StartKnop extends Knop implements IMouseInput
 {
 
     public StartKnop(GameEngine g, Oceaan o, float x, float y, float breedte, float hoogte)
@@ -26,12 +27,11 @@ public class StartKnop extends Knop
         o.maakAiSpawnerAan();
     }
 
-    @Override
     public void mousePressed(int x, int y, int button)
     {
         System.out.println("ADSF");
 
-        if (super.isMuisOverKnop())
+        if (super.isMuisOverKnop(x,y))
         {
             doeKnopActie();
         }

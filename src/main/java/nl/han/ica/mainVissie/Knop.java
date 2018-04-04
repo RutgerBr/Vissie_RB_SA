@@ -5,8 +5,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
-public abstract class Knop implements IMouseInput
-{
+public abstract class Knop {
     protected GameEngine g;
     protected Oceaan o;
 
@@ -21,9 +20,9 @@ public abstract class Knop implements IMouseInput
         this.o = o;
     }
 
-    public boolean isMuisOverKnop() {
-        if (g.mouseX >= x && g.mouseX < x + breedte &&
-                g.mouseY >= y && g.mouseY < y + hoogte) {
+    public boolean isMuisOverKnop(int xMuis, int yMuis) {
+        if (xMuis >= x && xMuis < x + breedte &&
+                yMuis >= y && yMuis < y + hoogte) {
             return true;
         } else {
             return false;
@@ -31,6 +30,7 @@ public abstract class Knop implements IMouseInput
     }
 
     public abstract void tekenKnop();
+
     public abstract void doeKnopActie();
 }
 
