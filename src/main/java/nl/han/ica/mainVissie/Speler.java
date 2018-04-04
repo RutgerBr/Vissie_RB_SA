@@ -74,7 +74,6 @@ public class Speler extends Vis
 
         if(isOpgegeten())
         {
-            System.out.println("adsf");
             oceaan.maakEindMenuAan();
         }
     }

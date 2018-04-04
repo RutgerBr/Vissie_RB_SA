@@ -32,7 +32,7 @@ public class Oceaan
     public void maakEindMenuAan()
     {
         g.deleteGameObject(speler);
-        menu = new EindMenu(getWorldWidth() / 2, getWorldHeight() / 2, 300, 300);
+        menu = new EindMenu(getWorldWidth() / 2, getWorldHeight() / 2, getWorldWidth(), getWorldHeight());
         menu.maakMenuAan(g, this);
     }
     private void printScore(int width, int height)
@@ -77,14 +77,6 @@ public class Oceaan
         g.setView(view);
         g.size(screenWidth, screenHeight);
         view.setBackground(g.loadImage("src/main/java/nl/han/ica/mainVissie/media/AchtergrondVissie.jpg"));
-    }
-
-    public void createViewWithoutViewport(GameEngine g, int screenWidth, int screenHeight) {
-        View view = new View(screenWidth,screenHeight);
-        view.setBackground(g.loadImage("src/main/java/nl/han/ica/mainVissie/media/AchtergrondVissie1000x800.jpg"));
-
-        g.setView(view);
-        g.size(screenWidth, screenHeight);
     }
 
     public void maakAiSpawnerAan()

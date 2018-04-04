@@ -2,6 +2,7 @@ package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.Dashboard;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import processing.core.PGraphics;
 
 public class EindMenu extends Menu
 {
@@ -22,5 +23,17 @@ public class EindMenu extends Menu
         g.addDashboard(dashboard);
 
         knop = new StartKnop(g, o, x, y, width, height);
+    }
+
+    @Override
+    public void update()
+    {
+
+    }
+
+    @Override
+    public void draw(PGraphics g)
+    {
+
     }
 }
