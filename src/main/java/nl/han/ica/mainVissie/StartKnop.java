@@ -15,7 +15,7 @@ public class StartKnop extends Knop
     public void tekenKnop()
     {
         o.g.fill(50, 50, 255);
-        o.g.rect(x, y, breedte, hoogte);
+        o.g.rect(super.x, super.y, super.breedte, super.hoogte);
     }
 
     @Override
@@ -29,6 +29,8 @@ public class StartKnop extends Knop
     @Override
     public void mousePressed(int x, int y, int button)
     {
+        System.out.println("ADSF");
+
         if (super.isMuisOverKnop())
         {
             doeKnopActie();

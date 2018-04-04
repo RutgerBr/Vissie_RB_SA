@@ -14,7 +14,7 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     protected Oceaan oceaan;
     protected GameEngine g;
     private int marge = 5;
-    private boolean opgegeten;
+    private boolean opgegeten = false;
     private Menu menu;
     //protected Sprite s;
 
@@ -62,7 +62,7 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     @Override
     public void update()
     {
-        if(opgegeten = true)
+        if(opgegeten)
         {
             oceaan.maakEindMenuAan();
         }

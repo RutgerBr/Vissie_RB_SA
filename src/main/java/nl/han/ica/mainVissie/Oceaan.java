@@ -31,8 +31,8 @@ public class Oceaan
 
     public void maakEindMenuAan()
     {
-        menu = new Menu(getWorldWidth() / 2, getWorldHeight() / 2, 300, 300);
-        menu.maakEindMenuAan(g, this);
+        menu = new EindMenu(getWorldWidth() / 2, getWorldHeight() / 2, 300, 300);
+        menu.maakMenuAan(g, this);
     }
     private void printScore(int width, int height)
     {
