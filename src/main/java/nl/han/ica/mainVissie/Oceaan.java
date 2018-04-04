@@ -31,6 +31,7 @@ public class Oceaan
 
     public void maakEindMenuAan()
     {
+        g.deleteGameObject(speler);
         menu = new EindMenu(getWorldWidth() / 2, getWorldHeight() / 2, 300, 300);
         menu.maakMenuAan(g, this);
     }

@@ -71,6 +71,12 @@ public class Speler extends Vis
             setySpeed(0);
             setY(super.oceaan.getWorldHeight() - grootte);
         }
+
+        if(isOpgegeten())
+        {
+            System.out.println("adsf");
+            oceaan.maakEindMenuAan();
+        }
     }
 
     @Override
