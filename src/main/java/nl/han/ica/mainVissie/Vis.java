@@ -55,6 +55,7 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
         }
     }
 
+    public abstract void bepaalGrootte();
     public abstract int getGrootte();
 
     @Override
@@ -66,5 +67,10 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     public boolean isOpgegeten()
     {
         return opgegeten;
+    }
+
+    public void setOpgegeten(boolean opgegeten)
+    {
+        this.opgegeten = opgegeten;
     }
 }

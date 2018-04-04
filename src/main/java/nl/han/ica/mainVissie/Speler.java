@@ -20,6 +20,13 @@ public class Speler extends Vis {
 
         // Hoe ver de speler beweegt in 1 "move"
         setFriction(0.05f);
+        bepaalGrootte();
+    }
+
+
+    @Override
+    public void bepaalGrootte()
+    {
         setHeight(grootte);
         setWidth(grootte);
     }

@@ -1,11 +1,13 @@
 package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
-public abstract class Knop {
+public abstract class Knop extends GameObject
+{
     protected GameEngine g;
     protected Oceaan o;
 
@@ -20,16 +22,16 @@ public abstract class Knop {
         this.o = o;
     }
 
-    public boolean isMuisOverKnop(int xMuis, int yMuis) {
-        if (xMuis >= x && xMuis < x + breedte &&
-                yMuis >= y && yMuis < y + hoogte) {
+    public boolean isMuisOverKnop() {
+        if (g.mouseX >= x && g.mouseX < x + breedte &&
+                g.mouseY >= y && g.mouseY < y + hoogte) {
             return true;
         } else {
             return false;
         }
     }
 
-    public abstract void tekenKnop();
+    public abstract void tekenKnop(PGraphics pg);
 
     public abstract void doeKnopActie();
 }

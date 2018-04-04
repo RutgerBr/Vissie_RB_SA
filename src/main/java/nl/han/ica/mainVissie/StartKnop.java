@@ -1,40 +1,44 @@
 package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
-import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
+import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
+import processing.core.PGraphics;
 
-public class StartKnop extends Knop implements IMouseInput
+public class StartKnop extends Knop
 {
 
-    public StartKnop(GameEngine g, Oceaan o, float x, float y, float breedte, float hoogte)
+    public StartKnop(GameEngine g, Oceaan o, float x, float y, int breedte, int hoogte)
     {
         super(g, o, x, y, breedte, hoogte);
-        tekenKnop();
     }
 
     @Override
-    public void tekenKnop()
+    public void tekenKnop(PGraphics pg)
     {
-        o.g.fill(50, 50, 255);
-        o.g.rect(super.x, super.y, super.breedte, super.hoogte);
+        pg.fill(50, 255, 50);
+        pg.rect(super.x, super.y, super.breedte, super.hoogte);
     }
 
     @Override
     public void doeKnopActie()
     {
         g.deleteAllGameOBjects();
+        g.deleteAllDashboards();
+        o = new Oceaan(g);
         o.maakSpelerAan(g);
         o.maakAiSpawnerAan();
     }
 
-    public void mousePressed(int x, int y, int button)
+    @Override
+    public void update()
     {
-        System.out.println("ADSF");
 
-        if (super.isMuisOverKnop(x,y))
-        {
-            doeKnopActie();
-        }
+    }
+
+    @Override
+    public void draw(PGraphics g)
+    {
+        tekenKnop(g);
     }
 
     @Override

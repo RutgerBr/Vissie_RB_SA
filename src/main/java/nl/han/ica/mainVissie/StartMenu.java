@@ -2,22 +2,21 @@ package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 
-public class EindMenu extends Menu
+public class StartMenu extends Menu
 {
     private Knop knop;
 
-    public EindMenu(GameEngine g, float x, float y, float width, float height)
+    public StartMenu(GameEngine g, float x, float y, float width, float height)
     {
         super(g, x, y, width, height);
     }
+
 
     @Override
     public void maakMenuAan(GameEngine g, Oceaan o)
     {
         this.setBackground(200, 200, 200);
-        tekstObject eindScore = new tekstObject("Eindscore: " + o.getScore(), 0, 0);
-        tekstObject startOpnieuw = new tekstObject("Je bent opgegeten! opnieuw beginnen: ", 0, 100);
-        addGameObject(eindScore);
+        tekstObject startOpnieuw = new tekstObject("Begin spel: ", 0, 0);
         addGameObject(startOpnieuw);
         knop = new StartKnop(g, o, o.getWorldWidth() / 5, 1, 500, 100);
         addGameObject(knop);

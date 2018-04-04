@@ -2,19 +2,37 @@ package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 
+import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 import processing.core.PApplet;
 
-public class mainVissie extends GameEngine {
+public class mainVissie extends GameEngine
+{
     private Oceaan oceaan;
+    private Sound achtergrondGeluid;
+    private Menu menu;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         PApplet.main(new String[]{"nl.han.ica.mainVissie.mainVissie"});
     }
 
     @Override
-    public void setupGame() {
+    public void setupGame()
+    {
+        maakSoundAan();
         maakOceaanAan();
+
+        menu = new StartMenu(this, 0, 0, oceaan.getWorldWidth(), oceaan.getWorldHeight());
+        menu.maakMenuAan(this, oceaan);
+
         oceaan.createViewWithViewport(this, 1000, 800, 1f);
+    }
+
+
+    private void maakSoundAan()
+    {
+        achtergrondGeluid = new Sound(this, "src/main/java/nl/han/ica/mainVissie/media/background.mp3");
+        achtergrondGeluid.loop(-1);
     }
 
     @Override
@@ -23,7 +41,14 @@ public class mainVissie extends GameEngine {
 
     }
 
-    private void maakOceaanAan() {
+    @Override
+    public void mousePressed()
+    {
+        System.out.println(mousePressed);
+    }
+
+    private void maakOceaanAan()
+    {
         oceaan = new Oceaan(this);
     }
 
