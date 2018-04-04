@@ -35,6 +35,8 @@ public class AI extends Vis
                 break;
         }*/
         beweeg(richting);
+        setHeight(grootte);
+        setWidth(grootte);
     }
 
     public void bepaalGrootte()

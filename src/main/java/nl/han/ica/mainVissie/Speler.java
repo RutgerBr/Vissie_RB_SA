@@ -22,6 +22,8 @@ public class Speler extends Vis
 
         // Hoe ver de speler beweegt in 1 "move"
         setFriction(0.05f);
+        setHeight(grootte);
+        setWidth(grootte);
     }
 
     /**
