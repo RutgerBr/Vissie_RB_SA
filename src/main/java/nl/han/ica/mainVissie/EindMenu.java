@@ -8,7 +8,7 @@ public class EindMenu extends Menu
 {
     private Knop knop;
 
-    public EindMenu(int x, int y, int width, int height)
+    public EindMenu(float x, float y, float width, float height)
     {
         super(x, y, width, height);
     }
@@ -23,17 +23,5 @@ public class EindMenu extends Menu
         g.addDashboard(dashboard);
 
         knop = new StartKnop(g, o, x, y, width, height);
-    }
-
-    @Override
-    public void update()
-    {
-
-    }
-
-    @Override
-    public void draw(PGraphics g)
-    {
-
     }
 }
