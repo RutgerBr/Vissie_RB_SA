@@ -27,9 +27,6 @@ public class StartKnop extends Knop
         o = new Oceaan(g);
         o.createViewWithViewport(g, 1000, 800, 1f);
         o.maakSpelerAan(g);
-        o.maakAiSpawnerAan();
-
-
     }
 
     @Override

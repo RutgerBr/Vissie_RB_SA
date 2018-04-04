@@ -270,3 +270,13 @@ FAILURE: test
 FAILURE: test
 [2015-51-08 10:51:39.436] 
 FAILURE: test
+[2018-43-04 11:43:12.889] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\mainVissie\media\records.txt (Het systeem kan het opgegeven pad niet vinden)
+[2018-43-04 11:43:35.546] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\mainVissie\media\records.txt (Het systeem kan het opgegeven pad niet vinden)
+[2018-43-04 11:43:37.675] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\mainVissie\media\records.txt (Het systeem kan het opgegeven pad niet vinden)
+[2018-44-04 11:44:53.273] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\mainVissie\media\records.txt (Het systeem kan het opgegeven pad niet vinden)
+[2018-45-04 11:45:19.515] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\mainVissie\media\records.txt (Het systeem kan het opgegeven pad niet vinden)
