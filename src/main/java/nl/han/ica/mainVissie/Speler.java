@@ -90,22 +90,22 @@ public class Speler extends Vis
     public void keyPressed(int keyCode, char key)
     {
         final int speed = 5;
-        if (keyCode == super.g.LEFT)
+        if (keyCode == super.g.LEFT || keyCode == 65)
         {
             setDirectionSpeed(270, speed);
             //  setCurrentFrameIndex(0);
         }
-        if (keyCode == super.g.UP)
+        if (keyCode == super.g.UP || keyCode == 87)
         {
             setDirectionSpeed(0, speed);
             //   setCurrentFrameIndex(2);
         }
-        if (keyCode == super.g.RIGHT)
+        if (keyCode == super.g.RIGHT || keyCode == 68)
         {
             setDirectionSpeed(90, speed);
             //    setCurrentFrameIndex(1);
         }
-        if (keyCode == super.g.DOWN)
+        if (keyCode == super.g.DOWN || keyCode == 83)
         {
             setDirectionSpeed(180, speed);
             //   setCurrentFrameIndex(3);
