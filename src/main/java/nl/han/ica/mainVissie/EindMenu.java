@@ -2,15 +2,32 @@ package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 
+
+/**
+ * Menu dat moet worden weergegeven aan het einde van het spel
+ */
 public class EindMenu extends Menu
 {
     private Knop knop;
 
+    /**
+     * @param g GameEngine
+     * @param x x positie
+     * @param y y positie
+     * @param width Breedte
+     * @param height Hoogte
+     */
     public EindMenu(GameEngine g, float x, float y, float width, float height)
     {
         super(g, x, y, width, height);
     }
 
+    /**
+     * Maak objecten aan die zichtbaar moeten zijn in het menu
+     * @param g GameEngine
+     * @param o Oceaan
+     * @param tekst Tekst wat moet worden weergegeven
+     */
     @Override
     public void maakMenuAan(GameEngine g, Oceaan o, String tekst)
     {
