@@ -35,12 +35,12 @@ public class AI extends Vis
                 break;
         }*/
         beweeg(richting);
-        setHeight(grootte);
-        setWidth(grootte);
     }
 
     public void bepaalGrootte()
     {
+        setHeight(grootte);
+        setWidth(grootte);
         //super.s.resize(grootte, grootte);
         //setFrameWidth(grootte / 2); // setter gemaakt in AnimatedSpriteObject uit GameEngine
     }
@@ -48,7 +48,8 @@ public class AI extends Vis
     @Override
     public void draw(PGraphics g)
     {
-        g.ellipseMode(g.CORNER);
+        g.ellipseMode(g.CORNER
+        );
         g.fill(255, 50, 50);
         g.ellipse(getX(), getY(), grootte, grootte);
     }

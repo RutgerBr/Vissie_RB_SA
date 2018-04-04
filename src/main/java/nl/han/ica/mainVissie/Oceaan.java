@@ -9,20 +9,18 @@ import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 public class Oceaan
 {
     private tekstObject score;
-    public Sound achtergrondGeluid;
+    private Sound achtergrondGeluid;
     private VisSpawner visSpawner;
     private Vis speler;
+    protected GameEngine g;
+    private boolean vissieIsOpgegeten = false;
+
     private int worldWidth = 1920;
     private int worldHeight = 1080;
-    protected GameEngine g;
-    private Menu menu;
-    private AI ai = new AI(this);
 
     public Oceaan(GameEngine g)
     {
         this.g = g;
-        maakMenuAan();
-        menu.addGameObject(ai);
 
         maakSpelerAan(g);
         printScore(worldWidth, 100);
@@ -40,11 +38,11 @@ public class Oceaan
 
     public void verhoogScore()
     {
+        if (isOpgegeten())
+        {
+            score.setTekst("Behaalde score : " + score);
+        }
         score.setTekst("Score: " + (speler.getGrootte()) * 10);
-    }
-
-    private void maakMenuAan(){
-        menu = new Menu();
     }
 
     private void maakSoundAan()
@@ -91,5 +89,15 @@ public class Oceaan
     public int getWorldHeight()
     {
         return worldHeight;
+    }
+
+    public boolean isOpgegeten()
+    {
+        return vissieIsOpgegeten;
+    }
+
+    public void setOpgegeten(boolean opgegeten)
+    {
+        vissieIsOpgegeten = opgegeten;
     }
 }

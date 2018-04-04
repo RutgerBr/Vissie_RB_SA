@@ -41,12 +41,11 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
                     ((Speler) this).speelHapGeluid();
                     g.deleteGameObject(go);
                     ((Speler) this).maakGroter(((AI) go).getGrootte() / marge);
-                    oceaan.verhoogScore();
                 } else if (this.getGrootte() < ((AI) go).getGrootte())
                 {
-                    g.deleteGameObject(this);
-                    // to-do endig game (eindmenu)
+                    oceaan.setOpgegeten(true);
                 }
+                oceaan.verhoogScore();
                 /*popSound.rewind();
                 popSound.play();
                 world.deleteGameObject(this);
@@ -60,5 +59,6 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     @Override
     public void update()
     {
+
     }
 }
