@@ -14,6 +14,8 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     protected Oceaan oceaan;
     protected GameEngine g;
     private int marge = 5;
+    private boolean opgegeten;
+    private Menu menu;
     //protected Sprite s;
 
     Vis(Oceaan o)
@@ -43,7 +45,8 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
                     ((Speler) this).maakGroter(((AI) go).getGrootte() / marge);
                 } else if (this.getGrootte() < ((AI) go).getGrootte())
                 {
-                    oceaan.setOpgegeten(true);
+                    opgegeten = true;
+                    g.deleteGameObject(this);
                 }
                 oceaan.verhoogScore();
                 /*popSound.rewind();
@@ -59,6 +62,14 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     @Override
     public void update()
     {
+        if(opgegeten = true)
+        {
+            oceaan.maakEindMenuAan();
+        }
+    }
 
+    public boolean isOpgegeten()
+    {
+        return opgegeten;
     }
 }

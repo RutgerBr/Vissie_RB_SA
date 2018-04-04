@@ -1,10 +1,12 @@
 package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
-public abstract class Knop {
+public abstract class Knop implements IMouseInput
+{
     protected GameEngine g;
     protected Oceaan o;
 

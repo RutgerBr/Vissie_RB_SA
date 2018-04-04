@@ -23,10 +23,7 @@ public class mainVissie extends GameEngine {
     @Override
     public void update()
     {
-        if(oceaan.isOpgegeten())
-        {
-            maakEindMenuAan(100,100);
-        }
+
     }
 
     @Override
@@ -40,16 +37,6 @@ public class mainVissie extends GameEngine {
 
     private void maakOceaanAan() {
         oceaan = new Oceaan(this);
-    }
-
-    private void maakEindMenuAan(int width, int height)
-    {
-        Dashboard dashboard = new Dashboard(oceaan.getWorldWidth() / 2, 0, width, height);
-        tekstObject startOpnieuw = new tekstObject("Je bent opgegeten, opnieuw beginnen: ");
-        dashboard.addGameObject(startOpnieuw);
-        addDashboard(dashboard);
-
-        knop = new StartKnop(this, oceaan, oceaan.getWorldWidth(), 0, width, height);
     }
 
     public void initializePersistence()

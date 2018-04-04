@@ -8,12 +8,13 @@ import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
 public class Oceaan
 {
-    private tekstObject score;
+    private tekstObject scoreTekst;
+    private int score = 0;
     private Sound achtergrondGeluid;
     private VisSpawner visSpawner;
     private Vis speler;
     protected GameEngine g;
-    private boolean vissieIsOpgegeten = false;
+    private Menu menu;
 
     private int worldWidth = 1920;
     private int worldHeight = 1080;
@@ -28,21 +29,30 @@ public class Oceaan
         maakSoundAan();
     }
 
+    public void maakEindMenuAan()
+    {
+        menu = new Menu(getWorldWidth() / 2, getWorldHeight() / 2, 300, 300);
+        menu.maakEindMenuAan(g, this);
+    }
     private void printScore(int width, int height)
     {
         Dashboard dashboard = new Dashboard(0, 0, width, height);
-        score = new tekstObject("Score: 0");
-        dashboard.addGameObject(score);
+        scoreTekst = new tekstObject("Score: 0");
+        dashboard.addGameObject(scoreTekst);
         g.addDashboard(dashboard);
     }
 
     public void verhoogScore()
     {
-        if (isOpgegeten())
+        if (speler.isOpgegeten())
         {
-            score.setTekst("Behaalde score : " + score);
+            scoreTekst.setTekst("Behaalde score : " + score);
         }
-        score.setTekst("Score: " + (speler.getGrootte()) * 10);
+        else
+        {
+            score = (speler.getGrootte()) * 10;
+            scoreTekst.setTekst("Score: " + score);
+        }
     }
 
     private void maakSoundAan()
@@ -51,7 +61,7 @@ public class Oceaan
         achtergrondGeluid.loop(-1);
     }
 
-    private void maakSpelerAan(GameEngine g)
+    public void maakSpelerAan(GameEngine g)
     {
         speler = new Speler(this);
 
@@ -89,15 +99,5 @@ public class Oceaan
     public int getWorldHeight()
     {
         return worldHeight;
-    }
-
-    public boolean isOpgegeten()
-    {
-        return vissieIsOpgegeten;
-    }
-
-    public void setOpgegeten(boolean opgegeten)
-    {
-        vissieIsOpgegeten = opgegeten;
     }
 }
