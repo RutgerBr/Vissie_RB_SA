@@ -2,7 +2,6 @@ package nl.han.ica.mainVissie;
 
 import java.util.Random;
 
-import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import processing.core.PGraphics;
 
 public class AI extends Vis
@@ -19,7 +18,7 @@ public class AI extends Vis
     {
         super(o);
         Random r = new Random();
-        this.grootte = r.nextInt(120) + 1; // Returned een waarde van 1 tot en met 50
+        this.grootte = r.nextInt(100) + 1; // Returned een waarde van 1 tot en met 50
         this.snelheid = r.nextInt(4) + 1; // Returned een waarde van 1 tot en met 5
         this.richting = r.nextInt(RECHTS + 1); // Returned een waarde 0 of 1
         bepaalGrootte();

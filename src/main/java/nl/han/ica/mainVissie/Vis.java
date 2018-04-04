@@ -13,7 +13,7 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
 {
     protected Oceaan oceaan;
     protected GameEngine g;
-    private int marge = 5;
+    private int marge = 4;
     private boolean opgegeten = false;
 
     Vis(Oceaan o)
