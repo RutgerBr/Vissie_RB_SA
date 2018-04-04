@@ -6,6 +6,9 @@ import nl.han.ica.OOPDProcessingEngineHAN.UserInput.IMouseInput;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
+/**
+ * Klasse om andere knoppen mee aan te maken
+ */
 public abstract class Knop extends GameObject
 {
     protected GameEngine g;
@@ -13,6 +16,14 @@ public abstract class Knop extends GameObject
 
     protected float x, y, breedte, hoogte;
 
+    /**
+     * @param g GameEngine
+     * @param o Oceaan
+     * @param x x positie
+     * @param y y positie
+     * @param breedte breedte
+     * @param hoogte hoogte
+     */
     public Knop(GameEngine g, Oceaan o, float x, float y, float breedte, float hoogte) {
         this.g = g;
         this.x = x;
@@ -22,6 +33,9 @@ public abstract class Knop extends GameObject
         this.o = o;
     }
 
+    /**
+     * @return true als muis over de knop is
+     */
     public boolean isMuisOverKnop() {
         if (g.mouseX >= x && g.mouseX < x + breedte &&
                 g.mouseY >= y && g.mouseY < y + hoogte) {

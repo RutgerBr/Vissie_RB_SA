@@ -4,8 +4,10 @@ import java.util.Random;
 
 import processing.core.PGraphics;
 
-public class AI extends Vis
-{
+/**
+ * De computergestuurde speler
+ */
+public class AI extends Vis {
     private int grootte;
     private int richting;
     private int snelheid;
@@ -14,38 +16,44 @@ public class AI extends Vis
     private final static int RECHTS = 1;
 
 
-    public AI(Oceaan o)
-    {
+    /**
+     * @param o Oceaan waarin de AI moet komen
+     */
+    public AI(Oceaan o) {
         super(o);
         Random r = new Random();
-        this.grootte = r.nextInt(100) + 1; // Returned een waarde van 1 tot en met 50
+        this.grootte = r.nextInt(100) + 1; // Returned een waarde van 1 tot en met 100
         this.snelheid = r.nextInt(4) + 1; // Returned een waarde van 1 tot en met 5
         this.richting = r.nextInt(RECHTS + 1); // Returned een waarde 0 of 1
         bepaalGrootte();
         beweeg(richting);
     }
 
-    public void bepaalGrootte()
-    {
+    /**
+     * Zegt tegen de engine hoe groot de AI is
+     */
+    public void bepaalGrootte() {
         setHeight(grootte);
         setWidth(grootte);
-        //super.s.resize(grootte, grootte);
-        //setFrameWidth(grootte / 2); // setter gemaakt in AnimatedSpriteObject uit GameEngine
     }
 
+    /**
+     * Tekent de AI
+     * @param g PGraphics object will be given by the GameEngine.
+     */
     @Override
-    public void draw(PGraphics g)
-    {
-        g.ellipseMode(g.CORNER
-        );
+    public void draw(PGraphics g) {
+        g.ellipseMode(g.CORNER);
         g.fill(255, 50, 50);
         g.ellipse(getX(), getY(), grootte, grootte);
     }
 
-    public void beweeg(int richting)
-    {
-        switch (richting)
-        {
+    /**
+     * Beweegt de AI
+     * @param richting De richting waar de AI heen beweegt
+     */
+    private void beweeg(int richting) {
+        switch (richting) {
             case LINKS:
                 setxSpeed(-snelheid);
                 break;
@@ -56,21 +64,17 @@ public class AI extends Vis
     }
 
     @Override
-    public void update()
-    {
-        if (getX() <= 10 || getX() >= oceaan.getWorldWidth())
-        {
+    public void update() {
+        if (getX() <= 10 || getX() >= oceaan.getWorldWidth()) {
             super.g.deleteGameObject(this);
         }
     }
 
-    public int getRichting()
-    {
+    public int getRichting() {
         return richting;
     }
 
-    public int getGrootte()
-    {
+    public int getGrootte() {
         return grootte;
     }
 }
