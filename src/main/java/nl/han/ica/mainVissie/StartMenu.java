@@ -2,16 +2,32 @@ package nl.han.ica.mainVissie;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 
+/**
+ * Dit startmenu tekent een venster dat een een startknop weergeeft
+ */
 public class StartMenu extends Menu
 {
     private Knop knop;
 
+    /**
+     * @param g GameEngine
+     * @param x x positie
+     * @param y y positie
+     * @param width breedte
+     * @param height hoogte
+     */
     public StartMenu(GameEngine g, float x, float y, float width, float height)
     {
         super(g, x, y, width, height);
     }
 
 
+    /**
+     * Maakt het volledige menu aan, roept textobjecten aan en zorgt dat de knop wordt getekend
+     * @param g     GameEngine
+     * @param o     Oceaan
+     * @param tekst tekst
+     */
     @Override
     public void maakMenuAan(GameEngine g, Oceaan o, String tekst)
     {
