@@ -4,7 +4,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 import processing.core.PGraphics;
 
 /**
- * Klasse speler waarin de vis geprogrammeerd wordt die kan worden bestuurd
+ * Klasse speler waarin de vis geprogrammeerd wordt die kan worden bestuurd middels de pijltjestoetsen of WASD
  */
 public class Speler extends Vis
 {
@@ -12,6 +12,10 @@ public class Speler extends Vis
     private int maxGrootte = 200;
     private final Sound hapGeluid;
 
+    /**
+     * Maak de Speler aan, bepaal de grootte van iedere beweegstap en zeg tegen de engine hoe groot de speler is
+     * @param o Oceaan
+     */
     Speler(Oceaan o)
     {
         super(o);
@@ -25,6 +29,9 @@ public class Speler extends Vis
     }
 
 
+    /**
+     * Zegt tegen de GameEngine hoe groot de speler is, de engine bepaalt dan weer de 'hitbox'
+     */
     @Override
     public void bepaalGrootte()
     {
@@ -48,6 +55,9 @@ public class Speler extends Vis
         }
     }
 
+    /**
+     * Speelt het geluid af dat in de constructor is geinitialiseerd
+     */
     public void speelHapGeluid()
     {
         hapGeluid.rewind();
@@ -90,6 +100,10 @@ public class Speler extends Vis
         }
     }
 
+    /**
+     * Tekent de speler op het speelveld
+     * @param g PGraphics object will be given by the GameEngine.
+     */
     @Override
     public void draw(PGraphics g)
     {
@@ -98,6 +112,11 @@ public class Speler extends Vis
         g.ellipse(getX(), getY(), grootte, grootte);
     }
 
+    /**
+     * Zorgt ervoor dat input van de toetsenbord wordt vertaald naar een actie van de speler. Zo kan de speler bewegen.
+     * @param keyCode
+     * @param key
+     */
     @Override
     public void keyPressed(int keyCode, char key)
     {
@@ -105,25 +124,24 @@ public class Speler extends Vis
         if (keyCode == super.g.LEFT || keyCode == 65)
         {
             setDirectionSpeed(270, speed);
-            //  setCurrentFrameIndex(0);
         }
         if (keyCode == super.g.UP || keyCode == 87)
         {
             setDirectionSpeed(0, speed);
-            //   setCurrentFrameIndex(2);
         }
         if (keyCode == super.g.RIGHT || keyCode == 68)
         {
             setDirectionSpeed(90, speed);
-            //    setCurrentFrameIndex(1);
         }
         if (keyCode == super.g.DOWN || keyCode == 83)
         {
             setDirectionSpeed(180, speed);
-            //   setCurrentFrameIndex(3);
         }
     }
 
+    /**
+     * @return Grootte van de speler
+     */
     public int getGrootte()
     {
         return grootte;
