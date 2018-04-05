@@ -16,6 +16,11 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     private int marge = 4;
     private boolean opgegeten = false;
 
+    /**
+     * Constructor
+     *
+     * @param o Oceaan
+     */
     Vis(Oceaan o)
     {
         this.oceaan = o;
@@ -23,6 +28,8 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
     }
 
     /**
+     * Let op voor collision.
+     *
      * Check of speler groter is dan de 'collided' AI en verwijder dan het kleinste object.
      * Als speler kleiner is dan het object dan zal de speler worden opgegeten en het spel worden gestopt.
      *
@@ -49,7 +56,14 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
         }
     }
 
+    /**
+     * Deze abstracte methode zal de grootte van de Vis bepalen.
+     */
     public abstract void bepaalGrootte();
+
+    /**
+     * @return de grootte van de vis.
+     */
     public abstract int getGrootte();
 
     @Override
@@ -58,6 +72,9 @@ public abstract class Vis extends GameObject implements ICollidableWithGameObjec
 
     }
 
+    /**
+     * @return  of de speler is opgegeten.
+     */
     public boolean isOpgegeten()
     {
         return opgegeten;
