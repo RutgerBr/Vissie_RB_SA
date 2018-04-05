@@ -5,6 +5,9 @@ import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 import processing.core.PApplet;
 
+/**
+ * In deze klasse wordt het gehele spel geinitialiseerd
+ */
 public class mainVissie extends GameEngine
 {
     private Oceaan oceaan;
@@ -28,6 +31,9 @@ public class mainVissie extends GameEngine
     }
 
 
+    /**
+     * Maakt de achtergrondmuziek aan en laat deze oneindig door loopen
+     */
     private void maakSoundAan()
     {
         achtergrondGeluid = new Sound(this, "src/main/java/nl/han/ica/mainVissie/media/background.mp3");
@@ -35,27 +41,17 @@ public class mainVissie extends GameEngine
     }
 
     @Override
-    public void update()
-    {
-
-    }
+    public void update() {    }
 
     @Override
-    public void mousePressed()
-    {
-        System.out.println(mousePressed);
-    }
+    public void mousePressed() {    }
 
+    /**
+     * Maakt een nieuwe oceaan aan
+     */
     private void maakOceaanAan()
     {
         oceaan = new Oceaan(this);
-    }
-
-
-
-    public void initializePersistence()
-    {
-
     }
 
     public void pauzeerSpel()
