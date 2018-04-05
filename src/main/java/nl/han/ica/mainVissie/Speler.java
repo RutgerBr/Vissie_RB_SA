@@ -82,9 +82,11 @@ public class Speler extends Vis
         if (isOpgegeten())
         {
             oceaan.maakEindMenuAan("je bent opgegeten!");
-        } else if (grootte == maxGrootte)
+        }
+
+        if (grootte >= maxGrootte)
         {
-            oceaan.maakEindMenuAan("Je bent de grootste vis!");
+            oceaan.maakEindMenuAan("Je bent enorm!");
         }
     }
 
